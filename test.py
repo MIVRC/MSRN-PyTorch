@@ -1,6 +1,6 @@
-# 功能：测试文件
-# 作者：ljc
-# 时间：2017.12.19
+﻿# Function：test.py
+# Author：MIVRC
+# Time：2018.2.1
 
 import argparse
 import torch

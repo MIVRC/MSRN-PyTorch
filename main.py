@@ -1,6 +1,6 @@
-# 功能：主文件
-# 作者：ljc
-# 时间：2018.3.6
+﻿# Function：main.py
+# Author：MIVRC
+# Time：2018.2.1
 
 import argparse, os
 import torch

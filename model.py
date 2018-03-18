@@ -1,6 +1,6 @@
-# 功能：自定义网络模型文件
-# 作者：ljc
-# 时间：2018.3.6
+﻿# Function：model.py
+# Author：MIVRC
+# Time：2018.2.1
 
 import torch
 import torch.nn as nn

@@ -1,6 +1,6 @@
-# 功能：数据加载文件
-# 作者：ljc
-# 时间：2017.12.19
+﻿# Function：data.py
+# Author：MIVRC
+# Time：2018.2.1
 
 import torch.utils.data as data
 import torch
