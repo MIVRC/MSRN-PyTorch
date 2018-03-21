@@ -1,5 +1,5 @@
-﻿# Function：test.py
-# Author：MIVRC
+# Function：test.py
+# Author：ljc
 # Time：2018.2.1
 
 import argparse
@@ -14,9 +14,9 @@ from skimage.measure import compare_ssim
 
 parser = argparse.ArgumentParser(description="SR test")
 parser.add_argument("--cuda", action="store_true", help="use cuda?")
-parser.add_argument("--model", default="Weights/200.pth", type=str, help="model path")
-parser.add_argument("--imagepath", default="/TEST/set14_x4", type=str, help="image path")
-parser.add_argument("--scale", default=4, type=int, help="")
+parser.add_argument("--model", default="Weights/model.pth", type=str, help="model path")
+parser.add_argument("--imagepath", default="TEST/set14_x2", type=str, help="image path")
+parser.add_argument("--scale", default=2, type=int, help="")
 
 opt = parser.parse_args()
 cuda = opt.cuda
@@ -58,7 +58,6 @@ sum_bicubic_ssim = 0
 sum_predicted_ssim = 0
 all_use_time = 0
 
-# Test
 for _, j in enumerate(image):
     print(j)
 
@@ -70,10 +69,47 @@ for _, j in enumerate(image):
     im_b_y = im_b_y.astype('double')
     im_l_y = im_l_y.astype('double')
 
-    psnr_bicubic = PSNR(im_gt_y, im_b_y, shave_border=opt.scale)
+    psnr_bicubic = PSNR(im_gt_y, im_b_y, shave_border=8)
     sum_bicubic_psnr += psnr_bicubic
-    ssim_bicubic = SSIM(im_gt_y, im_b_y, shave_border=opt.scale)
+    ssim_bicubic = SSIM(im_gt_y, im_b_y, shave_border=8)
     sum_bicubic_ssim += ssim_bicubic
 
     im_input = im_l_y / 255.
-    im_input = Variable(torch.from_numpy(im_input).float(), volatile=True).view(1
+    im_input = Variable(torch.from_numpy(im_input).float(), volatile=True).view(1, -1, im_input.shape[0], im_input.shape[1]).cuda()
+
+    if cuda:
+        model = model.cuda()
+        im_input = im_input.cuda()
+    else:
+        model = model.cpu()
+
+    start_time = time.time()
+    SR = model(im_input)
+    end_time = time.time()
+    use_time = end_time - start_time
+    all_use_time += use_time
+
+    SR = SR.cpu()
+    im_sr_y = SR.data[0].numpy().astype(float)
+
+    im_sr_y = im_sr_y * 255.
+    im_sr_y[im_sr_y < 0] = 0
+    im_sr_y[im_sr_y > 255.] = 255.
+    im_sr_y = im_sr_y[0, :, :]
+
+    psnr_predicted = PSNR(im_gt_y, im_sr_y, shave_border=opt.scale)
+    sum_predicted_psnr += psnr_predicted
+    ssim_predicted = SSIM(im_gt_y, im_sr_y, shave_border=opt.scale)
+    sum_predicted_ssim += ssim_predicted
+
+    print("PSNR_bicubic =", psnr_bicubic)
+    print("PSNR_predicted =", psnr_predicted)
+    print("SSI_bicubic =", ssim_bicubic)
+    print("SSIM_predicted =", ssim_predicted)
+    print("User_time =", use_time)
+
+print("Avg bicubic psnr =", sum_bicubic_psnr / len(image))
+print("Avg predicted psnr =", sum_predicted_psnr / len(image))
+print("Avg bicubic ssim =", sum_bicubic_ssim / len(image))
+print("Avg predicted ssim =", sum_predicted_ssim / len(image))
+print("Avg use time =", all_use_time / len(image))
