@@ -11,8 +11,8 @@ And then, all these features are sent to the reconstruction module for recovery 
 
 
 <p align="center">
-<img src="Results/58060_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/58060_2x.png" width="200px" height="200px"/>  <img src="sample_results/58060_x2_GT.png" width="200px" height="200px"/>
 <img src="Results/mark_58060_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/mark_58060_2x.png" width="200px" height="200px"/>  <img src="Results/mark_58060_x2_GT.png" width="200px" height="200px"/> 
+<img src="Results/58060_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/58060_2x.png" width="200px" height="200px"/>  <img src="Results/58060_x2_GT.png" width="200px" height="200px"/>
 </p>
 
 
