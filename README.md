@@ -19,7 +19,7 @@ And then, all these features are sent to the reconstruction module for recovery 
 
 <p align="center">
 <img src="Results/mark_barbara_x2_Aplus.png" width="200px" height="200px"/> <img src="Results/mark_barbara_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/mark_barbara_2x_MSRN.png" width="200px" height="200px"/>  <img src="Results/mark_barbara_x2_GT.png" width="200px" height="200px"/> 
-<img src="Results/barbara_x2_Aplus.png" width="200px" height="200px"/> <img src="barbara_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/barbara_2x_MSRN.png" width="200px" height="200px"/>  <img src="Results/barbara_x2_GT.png" width="200px" height="200px"/>
+<img src="Results/barbara_x2_Aplus.png" width="200px" height="200px"/> <img src="Results/barbara_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/barbara_2x_MSRN.png" width="200px" height="200px"/>  <img src="Results/barbara_x2_GT.png" width="200px" height="200px"/>
 </p>
 
 
