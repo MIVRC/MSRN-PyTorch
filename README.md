@@ -15,13 +15,15 @@ And then, all these features are sent to the reconstruction module for recovery 
 <img src="Results/58060_x2_Aplus.png" width="200px" height="200px"/> <img src="Results/58060_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/58060_2x.png" width="200px" height="200px"/>  <img src="Results/58060_x2_GT.png" width="200px" height="200px"/>
 </p>
 
+From left to right: Aplus, ProSRN, MSRN(our) and Original(GT)
 ---------------------
 
 <p align="center">
 <img src="Results/mark_barbara_x2_Aplus.png" width="200px" height="200px"/> <img src="Results/mark_barbara_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/mark_barbara_2x_MSRN.png" width="200px" height="200px"/>  <img src="Results/mark_barbara_x2_GT.png" width="200px" height="200px"/> 
 <img src="Results/barbara_x2_Aplus.png" width="200px" height="200px"/> <img src="Results/barbara_x2_LapSRN.png" width="200px" height="200px"/>  <img src="Results/barbara_2x_MSRN.png" width="200px" height="200px"/>  <img src="Results/barbara_x2_GT.png" width="200px" height="200px"/>
 </p>
-
+From left to right: Aplus, ProSRN, MSRN(our) and Original(GT)
+---------------------
 
 ## Prerequisites:
 1. Linux
@@ -30,8 +32,11 @@ And then, all these features are sent to the reconstruction module for recovery 
 3. CPU or NVIDIA GPU + CUDA CuDNN (CUDA 8.0)
  
    
-## Demo using pre-trained model (x2).
+## Demo using pre-trained model (x2)
 	python test.py --cuda
+
+    This is just a test demo for x2.
+    The final trained model (x2,x3,x4,x8) will be released soon.
 
 
 ## Training
