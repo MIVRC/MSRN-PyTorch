@@ -1,5 +1,5 @@
 # Function：test.py
-# Author：ljc
+# Author：MIVRC
 # Time：2018.2.1
 
 import argparse
