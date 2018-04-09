@@ -14,7 +14,7 @@ from skimage.measure import compare_ssim
 
 parser = argparse.ArgumentParser(description="SR test")
 parser.add_argument("--cuda", action="store_true", help="use cuda?")
-parser.add_argument("--model", default="Weights/model.pth", type=str, help="model path")
+parser.add_argument("--model", default="Weights/demo.pth", type=str, help="model path")
 parser.add_argument("--imagepath", default="TEST/set14_x2", type=str, help="image path")
 parser.add_argument("--scale", default=2, type=int, help="")
 
