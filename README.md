@@ -6,7 +6,7 @@ Based on the residual block, we introduce convolution kernels of different sizes
 Meanwhile, we let these features interact with each other to get the most effective image information. 
 This structure is called Multi-scale Residual Block (MSRB), which effectively extracts the features of the image. 
 Furthermore, the outputs of each MSRB are used as the hierarchical features for global feature fusion. 
-And then, all these features are sΩent to the reconstruction module for recovery of the high-quality image. 
+And then, all these features are sent to the reconstruction module for recovery of the high-quality image. 
 
 
 
