@@ -11,6 +11,8 @@ And then, all these features are sΩent to the reconstruction module for recover
 
 
 Paper can be found at http://openaccess.thecvf.com/content_ECCV_2018/papers/Juncheng_Li_Multi-scale_Residual_Network_ECCV_2018_paper.pdf
+
+
 More SR images reconstructed by our model can be found at https://goo.gl/bGnZ8D.
 
 
