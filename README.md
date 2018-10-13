@@ -32,12 +32,6 @@ And then, all these features are sΩent to the reconstruction module for recover
 2. Python 3.5
 3. PyTorch 0.4.0
 3. CPU or NVIDIA GPU + CUDA CuDNN (CUDA 8.0)
- 
-   
-## Demo using pre-trained model (x2, x3, x4, x8)
-      cd old/2   or   cd old/3   or   cd old/4   or   cd old/8
-	python test.py --cuda
-
 
 ## Training
 	python main.py --cuda

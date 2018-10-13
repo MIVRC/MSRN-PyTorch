@@ -10,7 +10,7 @@ from skimage.measure import compare_ssim
 
 parser = argparse.ArgumentParser(description="PyTorch MSRN test.py")
 parser.add_argument("--cuda", action="store_true", help="use cuda?")
-parser.add_argument("--model", default="Weights/final_x2.pth", type=str, help="model path")
+parser.add_argument("--model", default="Weights/final.pth", type=str, help="model path")
 parser.add_argument("--imagepath", default="PSNR_test/2/Set5_x2", type=str, help="image path")
 parser.add_argument("--scale", default=2, type=int, help="")
 opt = parser.parse_args()
