@@ -64,9 +64,9 @@ for _, j in enumerate(image):
     im_b_y = im_b_y.astype('double')
     im_l_y = im_l_y.astype('double')
 
-    psnr_bicubic = PSNR(im_gt_y, im_b_y, shave_border=8)
+    psnr_bicubic = PSNR(im_gt_y, im_b_y, shave_border=opt.scale)
     sum_bicubic_psnr += psnr_bicubic
-    ssim_bicubic = SSIM(im_gt_y, im_b_y, shave_border=8)
+    ssim_bicubic = SSIM(im_gt_y, im_b_y, shave_border=opt.scale)
     sum_bicubic_ssim += ssim_bicubic
 
     im_input = im_l_y / 255.
