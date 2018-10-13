@@ -1,24 +1,20 @@
-# Function：test.py
-# Author：MIVRC
-# Time：2018.2.1
-
 import argparse
 import torch
 from torch.autograd import Variable
 import numpy as np
-import time, math 
+import math
 import scipy.io as sio
 from os import listdir
 from os.path import join
 from skimage.measure import compare_ssim
 
-parser = argparse.ArgumentParser(description="SR test")
+parser = argparse.ArgumentParser(description="PyTorch MSRN test.py")
 parser.add_argument("--cuda", action="store_true", help="use cuda?")
-parser.add_argument("--model", default="Weights/demo.pth", type=str, help="model path")
-parser.add_argument("--imagepath", default="TEST/set14_x2", type=str, help="image path")
+parser.add_argument("--model", default="Weights/final_x2.pth", type=str, help="model path")
+parser.add_argument("--imagepath", default="PSNR_test/2/Set5_x2", type=str, help="image path")
 parser.add_argument("--scale", default=2, type=int, help="")
-
 opt = parser.parse_args()
+
 cuda = opt.cuda
 
 # PSNR
@@ -56,7 +52,6 @@ sum_bicubic_psnr = 0
 sum_predicted_psnr = 0
 sum_bicubic_ssim = 0
 sum_predicted_ssim = 0
-all_use_time = 0
 
 for _, j in enumerate(image):
     print(j)
@@ -83,11 +78,7 @@ for _, j in enumerate(image):
     else:
         model = model.cpu()
 
-    start_time = time.time()
     SR = model(im_input)
-    end_time = time.time()
-    use_time = end_time - start_time
-    all_use_time += use_time
 
     SR = SR.cpu()
     im_sr_y = SR.data[0].numpy().astype(float)
@@ -106,10 +97,8 @@ for _, j in enumerate(image):
     print("PSNR_predicted =", psnr_predicted)
     print("SSI_bicubic =", ssim_bicubic)
     print("SSIM_predicted =", ssim_predicted)
-    print("User_time =", use_time)
 
 print("Avg bicubic psnr =", sum_bicubic_psnr / len(image))
 print("Avg predicted psnr =", sum_predicted_psnr / len(image))
 print("Avg bicubic ssim =", sum_bicubic_ssim / len(image))
 print("Avg predicted ssim =", sum_predicted_ssim / len(image))
-print("Avg use time =", all_use_time / len(image))
