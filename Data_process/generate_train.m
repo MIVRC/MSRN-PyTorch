@@ -8,7 +8,7 @@ scale = 2;
 
 size_label = 64;
 size_input = size_label/scale;
-stride = 400;
+stride = 100;
 
 %% downsizing
 downsizes = [1,0.7,0.5];

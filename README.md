@@ -48,3 +48,7 @@ We use matlab code for training data augment
 ### test dataset generation
       cd Data_process
       run generate_test.m
+      
+## Example (use pretrained model x3)
+     cd example
+     python test.py --cuda
