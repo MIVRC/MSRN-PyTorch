@@ -5,6 +5,8 @@ Paper can be download from <a href="http://openaccess.thecvf.com/content_ECCV_20
 
 All reconstructed SR images can be downloaded from <a href="https://www.jianguoyun.com/p/DSc6bJcQ19ySBxiM_IUBf">here</a> .
 
+All test datasets (HR images) can be downloaded from<a href="https://www.jianguoyun.com/p/DcrVSz0Q19ySBxiTs4oB">here</a>.
+
 ```
 @InProceedings{Li_2018_ECCV,
 author = {Li, Juncheng and Fang, Faming and Mei, Kangfu and Zhang, Guixu},
