@@ -5,7 +5,9 @@ Paper can be download from <a href="http://openaccess.thecvf.com/content_ECCV_20
 
 All reconstructed SR images can be downloaded from <a href="https://www.jianguoyun.com/p/DSc6bJcQ19ySBxiM_IUBf">here</a> .
 
-All test datasets (HR images) can be downloaded from<a href="https://www.jianguoyun.com/p/DcrVSz0Q19ySBxiTs4oB">here</a>.
+All test datasets (Preprocessed HR images) can be downloaded from <a href="https://www.jianguoyun.com/p/DcrVSz0Q19ySBxiTs4oB">here</a>.
+
+All original test datasets (HR images) can be downloaded from <a href="https://www.jianguoyun.com/p/DaSU0L4Q19ySBxi_qJAB">here</a>.
 
 ```
 @InProceedings{Li_2018_ECCV,
