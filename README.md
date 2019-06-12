@@ -144,21 +144,21 @@ MSRN x2 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
 <img src="images/loss_x2.png" width="400px" height="300px"/>
-<img src="images/DIV2K_x2.png" width="400px" height="300px"/>
+<img src="images/x2.png" width="400px" height="300px"/>
 </p>
 
 MSRN x3 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
 <img src="images/loss_x3.png" width="400px" height="300px"/> 
-<img src="images/DIV2K_x3.png" width="400px" height="300px"/>
+<img src="images/x3.png" width="400px" height="300px"/>
 </p>
 
 MSRN x4 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
 <img src="images/loss_x4.png" width="400px" height="300px"/>
-<img src="images/DIV2K_x4.png" width="400px" height="300px"/>
+<img src="images/x4.png" width="400px" height="300px"/>
 </p>
 
 
