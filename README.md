@@ -11,13 +11,10 @@ All original test datasets (HR images) can be downloaded from <a href="https://w
 
 Our MSRN was  trained and tested on the Y channel directly.
 However, more and more SR models are trained on RGB channels.
-
 For a fair comparison, we retrained MSRN based on <a href="https://github.com/thstkdgus35/EDSR-PyTorch">EDSR</a>  code.
-
 We release the new codes and results on this project.
 
 The old codes are moved into the OLD/ folder.
-
 The new codes are stored on MSRN/ folder.
 
 
@@ -34,7 +31,7 @@ Notice that, we only use 800 images (DIV2K 1-800) for training and use the lates
 #### At the same time, we also noticed the defect of MSRN, the improved version of MSRN will be released soon.
 
 
-
+--------------------
 
 ## Prerequisites:
 1. Python 3.6
@@ -48,7 +45,6 @@ Notice that, we only use 800 images (DIV2K 1-800) for training and use the lates
 For more informaiton, please refer to <a href="https://github.com/thstkdgus35/EDSR-PyTorch">EDSR</a> and <a href="https://github.com/yulunzhang/RCAN">RCAN</a>.
 
 
---------------------
 
 
 ## Document
@@ -147,21 +143,21 @@ MSRN+            |x8|27.07/0.7784|25.03/0.6422|24.83/0.5974|22.51/0.6182|24.62/0
 MSRN x2 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
-<img src="images/loss_L1_x2.png" width="400px" height="300px"/>
+<img src="images/loss_x2.png" width="400px" height="300px"/>
 <img src="images/DIV2K_x2.png" width="400px" height="300px"/>
 </p>
 
 MSRN x3 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
-<img src="images/loss_L1_x3.png" width="400px" height="300px"/> 
+<img src="images/loss_x3.png" width="400px" height="300px"/> 
 <img src="images/DIV2K_x3.png" width="400px" height="300px"/>
 </p>
 
 MSRN x4 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
-<img src="images/loss_L1_x4.png" width="400px" height="300px"/>
+<img src="images/loss_x4.png" width="400px" height="300px"/>
 <img src="images/DIV2K_x4.png" width="400px" height="300px"/>
 </p>
 
