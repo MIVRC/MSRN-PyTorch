@@ -3,21 +3,11 @@
 
 Paper can be download from <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Juncheng_Li_Multi-scale_Residual_Network_ECCV_2018_paper.pdf">MSRN</a> 
 
-All reconstructed SR images can be downloaded from <a href="https://www.jianguoyun.com/p/DSc6bJcQ19ySBxiM_IUBf">here</a> .
-
 All test datasets (Preprocessed HR images) can be downloaded from <a href="https://www.jianguoyun.com/p/DcrVSz0Q19ySBxiTs4oB">here</a>.
 
 All original test datasets (HR images) can be downloaded from <a href="https://www.jianguoyun.com/p/DaSU0L4Q19ySBxi_qJAB">here</a>.
 
-```
-@InProceedings{Li_2018_ECCV,
-author = {Li, Juncheng and Fang, Faming and Mei, Kangfu and Zhang, Guixu},
-title = {Multi-scale Residual Network for Image Super-Resolution},
-booktitle = {The European Conference on Computer Vision (ECCV)},
-month = {September},
-year = {2018}
-}
-```
+
 
 Our MSRN was  trained and tested on the Y channel directly.
 However, more and more SR models are trained on RGB channels.
@@ -30,11 +20,19 @@ The old codes are moved into the OLD/ folder.
 
 The new codes are stored on MSRN/ folder.
 
-Now let's take a detailed introduction to the new codes.
 
-```
-cd MSRN/
-```
+### Update log
+The retraining model provided previously uses the DIV2K (1-895).
+
+We corrected this error and provided retrained models (DIV2K 1-800) and results.
+
+We also provided x8 results now!
+
+Notice that, we only use 800 images (DIV2K 1-800) for training and use the latest weight file for the test.
+
+
+#### At the same time, we also noticed the defect of MSRN, the improved version of MSRN will be released soon.
+
 
 
 
@@ -49,6 +47,8 @@ cd MSRN/
 
 For more informaiton, please refer to <a href="https://github.com/thstkdgus35/EDSR-PyTorch">EDSR</a> and <a href="https://github.com/yulunzhang/RCAN">RCAN</a>.
 
+
+--------------------
 
 
 ## Document
@@ -67,9 +67,12 @@ Extract the file and put it into the Train/dataset.
 
 ## Training
 
-Use --ext sep_reset argument on your first running. 
+Using --ext sep_reset argument on your first running.
 
 You can skip the decoding part and use saved binaries with --ext sep argument in second time.
+
+
+If you have enough memory, using --ext bin.
  
 ```
   cd Train/
@@ -85,7 +88,7 @@ You can skip the decoding part and use saved binaries with --ext sep argument in
 ```
 
 ## Testing
-Using pre-trained model for training, all test datasets must be pretreatment by  Prepare_TestData_HR_LR.m and all pre-trained model should be put into Test/model/ first.
+Using pre-trained model for training, all test datasets must be pretreatment by  ''Test/Prepare_TestData_HR_LR.m" and all pre-trained model should be put into "Test/model/".
 
 ```
 #MSRN x2
@@ -118,40 +121,57 @@ More running instructions can be found in demo.sh.
 
 Our MSRN is trained on RGB, but as in previous work, we only reported PSNR/SSIM on the Y channel.
 
-We use  Test/PSNR_SSIM_Results_BI_model.txt for PSRN/SSIM test.
+We use  the file  ''Test/Evaluate_PSNR_SSIM'' for test.
 
 
 Model|Scale|Set5|Set14|B100|Urban100|Manga109
 --|:--:|:--:|:--:|:--:|:--:|:--:
-old       |x2|38.08/0.9605|33.74/0.9170|32.23/0.9013|32.22/0.9326|38.82/0.9868
-MSRN  |x2|38.08/0.9607|33.70/0.9186|32.23/0.9002|32.29/0.9303|38.69/0.9772
-MSRN+|x2|38.15/0.9611|33.80/0.9192|32.28/0.9008|32.48/0.9318|38.93/0.9778
-old       |x3|34.38/0.9262|30.34/0.8395|29.08/0.8041|28.08/0.8554|33.44/0.9427
-MSRN  |x3|34.46/0.9278|30.41/0.8437|29.15/0.8064|28.33/0.8561|33.67/0.9456
-MSRN+|x3|34.60/0.9286|30.52/0.8453|29.21/0.8075|28.51/0.8589|33.99/0.9473
-old       |x4|32.07/0.8903|28.60/0.7751|27.52/0.7273|26.04/0.7896|30.17/0.9034
-MSRN  |x4|32.26/0.8960|28.63/0.7836|27.61/0.7380|26.22/0.7911|30.57/0.9103
-MSRN+|x4|32.40/0.8974|28.77/0.7860|27.69/0.7395|26.41/0.7952|30.93/0.9136
+old (paper)       |x2|38.08/0.9605|33.74/0.9170|32.23/0.9013|32.22/0.9326|38.82/0.9868
+MSRN              |x2|38.07/0.9608|33.68/0.9184|32.22/0.9002|32.32/0.9304|38.64/0.9771
+MSRN+            |x2|38.16/0.9611|33.82/0.9196|32.28/0.9080|32.47/0.9316|38.87/0.9777
+old (paper)       |x3|34.38/0.9262|30.34/0.8395|29.08/0.8041|28.08/0.8554|33.44/0.9427
+MSRN              |x3|34.48/0.9276|30.40/0.8436|29.13/0.8061|28.31/0.8560|33.56/0.9451
+MSRN+            |x3|34.59/0.9285|30.51/0.8454|29.20/0.8073|28.49/0.8588|33.91/0.9470
+old (paper)       |x4|32.07/0.8903|28.60/0.7751|27.52/0.7273|26.04/0.7896|30.17/0.9034
+MSRN              |x4|32.25/0.8958|28.63/0.7833|27.61/0.7377|26.22/0.7905|30.57/0.9103
+MSRN+            |x4|32.41/0.8975|28.76/0.7859|27.68/0.7394|26.39/0.7946|30.92/0.9136
+MSRN              |x8|26.95/0.7728|24.87/0.6380|24.77/0.5954|22.35/0.6124|24.40/0.7729
+MSRN+            |x8|27.07/0.7784|25.03/0.6422|24.83/0.5974|22.51/0.6182|24.62/0.7795
+
+
+
 
 
 ## Convergence Analyses
 
-MSRN x2 on DIV2K training dataset.
+MSRN x2 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
 <img src="images/loss_L1_x2.png" width="400px" height="300px"/>
+<img src="images/DIV2K_x2.png" width="400px" height="300px"/>
 </p>
 
-MSRN x3 on DIV2K training dataset.
+MSRN x3 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
 <img src="images/loss_L1_x3.png" width="400px" height="300px"/> 
+<img src="images/DIV2K_x3.png" width="400px" height="300px"/>
 </p>
 
-MSRN x4 on DIV2K training dataset.
+MSRN x4 on DIV2K training datasets (1-800) and test datasets (896-900).
 
 <p align="center">
 <img src="images/loss_L1_x4.png" width="400px" height="300px"/>
+<img src="images/DIV2K_x4.png" width="400px" height="300px"/>
 </p>
 
 
+```
+@InProceedings{Li_2018_ECCV,
+author = {Li, Juncheng and Fang, Faming and Mei, Kangfu and Zhang, Guixu},
+title = {Multi-scale Residual Network for Image Super-Resolution},
+booktitle = {The European Conference on Computer Vision (ECCV)},
+month = {September},
+year = {2018}
+}
+```

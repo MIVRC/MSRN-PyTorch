@@ -6,7 +6,7 @@ clear all; close all; clc
 degradation = 'BI'; % BI, BD
 methods = {'MSRN', 'MSRN_plus'};
 %methods = {'MSRN'};
-dataset = {'Manga109'};
+dataset = {'Set5'};
 ext = {'*.jpg', '*.png', '*.bmp'};
 num_method = length(methods);
 num_set = length(dataset);

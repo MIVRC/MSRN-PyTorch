@@ -27,7 +27,7 @@ parser.add_argument('--data_train', type=str, default='DIV2K',
                     help='train dataset name')
 parser.add_argument('--data_test', type=str, default='DIV2K',
                     help='test dataset name')
-parser.add_argument('--data_range', type=str, default='1-895/896-900',
+parser.add_argument('--data_range', type=str, default='1-800/896-900',
                     help='train/test data range')
 parser.add_argument('--ext', type=str, default='sep',
                     help='dataset file extension')
@@ -67,14 +67,6 @@ parser.add_argument('--dilation', action='store_true',
 parser.add_argument('--precision', type=str, default='single',
                     choices=('single', 'half'),
                     help='FP precision for test (single | half)')
-
-# Option for Residual dense network (RDN)
-parser.add_argument('--G0', type=int, default=64,
-                    help='default number of filters. (Use in RDN)')
-parser.add_argument('--RDNkSize', type=int, default=3,
-                    help='default kernel size. (Use in RDN)')
-parser.add_argument('--RDNconfig', type=str, default='B',
-                    help='parameters config of RDN. (Use in RDN)')
 
 # Option for Residual channel attention network (RCAN)
 parser.add_argument('--n_resgroups', type=int, default=1,
