@@ -18,7 +18,7 @@ The old codes are moved into the OLD/ folder.
 The new codes are stored on MSRN/ folder.
 
 
-### Update log
+### Update 2019.06.12.1
 The retraining model provided previously uses the DIV2K (1-895).
 
 We corrected this error and provided retrained models (DIV2K 1-800) and results.
@@ -26,6 +26,14 @@ We corrected this error and provided retrained models (DIV2K 1-800) and results.
 We also provided x8 results now!
 
 Notice that, we only use 800 images (DIV2K 1-800) for training and use the latest weight file for the test.
+
+
+### Update 2019.06.12.2
+
+
+All pretrained model can be downloaded from <a href="https://www.jianguoyun.com/p/DQpSSlQQ19ySBxjH2IYB">ECCV2018_MSRN_premodel</a>  or can be found "Test/model".
+
+All reconstructed images can be downloaded from  <a href="https://www.jianguoyun.com/p/DQW60AIQ19ySBxjD8ckB">ECCV2018_MSRN_SR_images</a> （Including MSRN and MSRN+）. 
 
 
 #### At the same time, we also noticed the defect of MSRN, the improved version of MSRN will be released soon.
