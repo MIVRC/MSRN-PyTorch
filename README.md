@@ -36,7 +36,7 @@ All pretrained model can be downloaded from <a href="https://www.jianguoyun.com/
 All reconstructed images can be downloaded from  <a href="https://www.jianguoyun.com/p/DQW60AIQ19ySBxjD8ckB">ECCV2018_MSRN_SR_images</a> （Including MSRN and MSRN+）. 
 
 
-#### At the same time, we also noticed the defect of MSRN, the improved version of MSRN will be released soon.
+#### At the same time, we also noticed the defect of MSRN, the improved version of MSRN will be released soon.  
 
 
 --------------------
@@ -108,7 +108,7 @@ python main.py --data_test MyImage --scale 3 --model MSRN --pre_train ../model/M
 #MSRN+ x3
 python main.py --data_test MyImage --scale 3 --model MSRN --pre_train ../model/MSRN_x3.pt --test_only --save_results --chop --self_ensemble --save "MSRN_plus" --testpath ../LR/LRBI --testset Set5
 
-
+/Users/juncheng/Documents/MSRN-PyTorch
 #MSRN x4
 python main.py --data_test MyImage --scale 4 --model MSRN --pre_train ../model/MSRN_x4.pt --test_only --save_results --chop --save "MSRN" --testpath ../LR/LRBI --testset Set5
 
@@ -180,3 +180,6 @@ month = {September},
 year = {2018}
 }
 ```
+
+This implementation is for non-commercial research use only. 
+If you find this code useful in your research, please cite the above paper.
